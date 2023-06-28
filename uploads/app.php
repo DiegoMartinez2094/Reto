@@ -3,7 +3,7 @@
     $router = new \Bramus\Router\Router();
     
 
-/**1- Tabla Areas------------------------------------------------------------------------------------------------------------------------------------------------- */
+/**1- Tabla CAMPERS------------------------------------------------------------------------------------------------------------------------------------------------- */
 
     $router->get("/campus", function(){
         $cox = new \App\connect();
@@ -17,7 +17,7 @@
     $router->put("/campus", function(){
         $_DATA = json_decode(file_get_contents("php://input"), true);
         $cox = new \App\connect();
-        $res = $cox->con->prepare("UPDATE campers SET idCamper = :ID, nombrecamper = :NOMBRE, apellidoCamper =:APELLIDO, idReg=:IDREG WHERE idCamper =:ID");
+        $res = $cox->con->prepare("UPDATE campers SET nombrecamper = :NOMBRE, apellidoCamper =:APELLIDO, idReg=:IDREG  WHERE idCamper =:ID");
         $res-> bindValue("ID", $_DATA['idCamper']);
         $res-> bindValue("NOMBRE", $_DATA['nombrecamper']);
         $res-> bindValue("APELLIDO", $_DATA['apellidoCamper']);
