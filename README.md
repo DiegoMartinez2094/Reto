@@ -36,4 +36,16 @@ ________________________________________________________________________________
 
 Con la solicitud GET y el endpoint campus obtenemos los datos de la tabla campers:
 
-![1687990038477](image/README/1687990038477.png)
+![1687990450713](image/README/1687990450713.png)
+
+Con la solicitud DELETE y el idCamper eliminamos uno de nuestros campers:
+
+![1687990535781](image/README/1687990535781.png)
+
+Con la solicitud POST INGRESAMOS la informacion:
+
+![1687991790062](image/README/1687991790062.png)
+
+con la solicitud PUT editamos:
+
+![1687991859807](image/README/1687991859807.png)

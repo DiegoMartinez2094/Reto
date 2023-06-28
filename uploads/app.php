@@ -17,9 +17,9 @@
     $router->put("/campus", function(){
         $_DATA = json_decode(file_get_contents("php://input"), true);
         $cox = new \App\connect();
-        $res = $cox->con->prepare("UPDATE campers SET nombrecamper = :NOMBRE, apellidoCamper =:APELLIDO, idReg=:IDREG  WHERE idCamper =:ID");
+        $res = $cox->con->prepare("UPDATE campers SET nombreCamper = :NOMBRE, apellidoCamper =:APELLIDO, idReg=:IDREG  WHERE idCamper =:ID");
         $res-> bindValue("ID", $_DATA['idCamper']);
-        $res-> bindValue("NOMBRE", $_DATA['nombrecamper']);
+        $res-> bindValue("NOMBRE", $_DATA['nombreCamper']);
         $res-> bindValue("APELLIDO", $_DATA['apellidoCamper']);
         $res-> bindValue("IDREG", $_DATA['idReg']);
         $res -> execute();
@@ -40,9 +40,9 @@
     $router->post("/campus", function(){
         $_DATA = json_decode(file_get_contents("php://input"), true);
         $cox = new \App\connect();
-        $res = $cox->con->prepare("INSERT INTO campers (idCamper,nombrecamper,apellidoCamper,idReg) VALUES (:ID,:NOMBRE,:APELLIDO,:IDREG)");
+        $res = $cox->con->prepare("INSERT INTO campers (idCamper,nombreCamper,apellidoCamper,idReg) VALUES (:ID,:NOMBRE,:APELLIDO,:IDREG)");
         $res-> bindValue("ID", $_DATA['idCamper']);
-        $res-> bindValue("NOMBRE", $_DATA['nombrecamper']);
+        $res-> bindValue("NOMBRE", $_DATA['nombreCamper']);
         $res-> bindValue("APELLIDO", $_DATA['apellidoCamper']);
         $res-> bindValue("IDREG", $_DATA['idReg']);
         $res -> execute();
